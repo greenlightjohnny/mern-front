@@ -1,16 +1,18 @@
 export default {
   getTodos: () => {
-    return fetch("https://mern-skeleton.netlify.app/user/todo").then((res) => {
-      if (res.status != 401) {
-        return res.json().then((data) => data);
-      } else {
-        return { message: { msgBody: "UnAuthorized" }, msgError: true };
+    return fetch("https://mern-auth-skeleton.herokuapp.com/user/todo").then(
+      (res) => {
+        if (res.status != 401) {
+          return res.json().then((data) => data);
+        } else {
+          return { message: { msgBody: "UnAuthorized" }, msgError: true };
+        }
       }
-    });
+    );
   },
 
   postTodo: (todo) => {
-    return fetch("https://mern-skeleton.netlify.app/user/todo", {
+    return fetch("https://mern-auth-skeleton.herokuapp.com/user/todo", {
       method: "post",
       body: JSON.stringify(todo),
       headers: {

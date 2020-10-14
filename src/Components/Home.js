@@ -25,6 +25,10 @@ const Home = () => {
               using all functional components and the useContext Hook for global
               state management.
             </p>
+            <p>
+              Netlify CDN server for the Front End. Heroku server for the Node
+              Back End, and a separate MongoDB Atlas server for the database.
+            </p>
             {/* <p>
               "Just walk into a place, give the manager a firm handshake, and
               ask for a job" - Parents <br></br>
@@ -52,6 +56,7 @@ const Home = () => {
                 <h4>Front End</h4>
                 <ul>
                   <li>React</li>
+                  <li>Netlify</li>
                   <li>Functional Components</li>
                   <li>Node SASS</li>
                   <li>useEffect, useContext, useState</li>
