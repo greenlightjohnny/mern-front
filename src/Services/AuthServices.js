@@ -2,7 +2,7 @@
 
 export default {
   login: (user) => {
-    return fetch("https://mern-auth-skeleton.herokuapp.com/user/login", {
+    return fetch("https://mern-skeleton.netlify.app/user/login", {
       method: "POST",
       body: JSON.stringify(user),
       headers: {
@@ -18,7 +18,7 @@ export default {
   },
 
   register: (user) => {
-    return fetch("https://mern-auth-skeleton.herokuapp.com/user/register", {
+    return fetch("https://mern-skeleton.netlify.app/user/register", {
       method: "POST",
       body: JSON.stringify(user),
       headers: {
@@ -30,21 +30,19 @@ export default {
   },
 
   logout: () => {
-    return fetch("https://mern-auth-skeleton.herokuapp.com/user/logout")
+    return fetch("https://mern-skeleton.netlify.app/user/logout")
       .then((res) => res.json())
       .then((data) => data);
   },
 
   ///Sync back and front end together
   isAuthenticated: () => {
-    return fetch("https://mern-auth-skeleton.herokuapp.com/user/auth").then(
-      (res) => {
-        if (res.status !== 401) {
-          return res.json().then((data) => data);
-        } else {
-          return { isAuthenticated: false, user: { username: "", role: "" } };
-        }
+    return fetch("https://mern-skeleton.netlify.app/user/auth").then((res) => {
+      if (res.status !== 401) {
+        return res.json().then((data) => data);
+      } else {
+        return { isAuthenticated: false, user: { username: "", role: "" } };
       }
-    );
+    });
   },
 };
