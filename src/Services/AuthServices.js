@@ -2,7 +2,7 @@
 
 export default {
   login: (user) => {
-    return fetch("https://mern-skeleton.netlify.app/user/login", {
+    return fetch("/user/login", {
       method: "POST",
       body: JSON.stringify(user),
       headers: {
@@ -18,7 +18,7 @@ export default {
   },
 
   register: (user) => {
-    return fetch("https://mern-skeleton.netlify.app/user/register", {
+    return fetch("/user/register", {
       method: "POST",
       body: JSON.stringify(user),
       headers: {
@@ -30,14 +30,14 @@ export default {
   },
 
   logout: () => {
-    return fetch("https://mern-skeleton.netlify.app/user/logout")
+    return fetch("/user/logout")
       .then((res) => res.json())
       .then((data) => data);
   },
 
   ///Sync back and front end together
   isAuthenticated: () => {
-    return fetch("https://mern-skeleton.netlify.app/user/auth").then((res) => {
+    return fetch("/user/auth").then((res) => {
       if (res.status !== 401) {
         return res.json().then((data) => data);
       } else {
