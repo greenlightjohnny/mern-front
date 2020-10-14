@@ -1,6 +1,6 @@
 export default {
   getTodos: () => {
-    return fetch("/user/todo").then((res) => {
+    return fetch("https://mern-skeleton.netlify.app/user/todo").then((res) => {
       if (res.status != 401) {
         return res.json().then((data) => data);
       } else {
@@ -10,7 +10,7 @@ export default {
   },
 
   postTodo: (todo) => {
-    return fetch("/user/todo", {
+    return fetch("https://mern-skeleton.netlify.app/user/todo", {
       method: "post",
       body: JSON.stringify(todo),
       headers: {
