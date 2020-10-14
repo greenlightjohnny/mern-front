@@ -1,1 +1,3 @@
 /user/*  https://https://mern-auth-skeleton.herokuapp.com/user/:splat 200
+
+/*    /index.html   200
